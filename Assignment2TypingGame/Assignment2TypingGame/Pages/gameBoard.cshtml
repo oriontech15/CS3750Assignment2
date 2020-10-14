@@ -1,7 +1,30 @@
 ﻿@page
 @model Assignment2TypingGame.Pages.gameBoardModel
-@{
-}
+
 
 
 <div> Game Board Page </div>
+
+<div class="container bg-warning">
+
+    <div class="row">
+
+        <div class="col bg-primary columnHeight">
+            <div class="bg-warning typingAreaHeight pt-3 mt-3">
+
+                Typing Area
+
+            </div>
+            <div class="container-fluid">
+                <input type="text" name="playerOneAnswer" value="Typing Area for Player 1" />
+            </div>
+        </div>
+
+        <div class="col bg-success columnHeight">
+            Second column
+            <input type="text" name="playerTwoAnswer" value="Typing area for Player 2" />
+        </div>
+
+    </div>
+
+</div>
