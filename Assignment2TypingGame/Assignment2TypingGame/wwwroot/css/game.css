@@ -5,3 +5,14 @@
 .typingAreaHeight{
     height: 450px;
 }
+
+.nameContainer{
+    width: 30%;
+    float: left;
+
+}
+
+.scoreContainer {
+    width: 30%;
+    float: right;
+}

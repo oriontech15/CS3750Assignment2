@@ -3,26 +3,53 @@
 
 
 
-<div> Game Board Page </div>
+<div class="text-center"> Game Board Page </div>
 
-<div class="container bg-warning">
+
+<div class="container">
+    <div class="row border border-dark">
+        <div class="col-4 text-center border border-dark">
+            player 1 score
+        </div>
+
+        <div class="col-4 text-center border border-dark">
+            Universal Timer For Players
+        </div>
+
+        <div class="col-4 text-center border border-dark">
+
+            player 2 score
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container rounded">
+   
 
     <div class="row">
 
-        <div class="col bg-primary columnHeight">
-            <div class="bg-warning typingAreaHeight pt-3 mt-3">
+        <div class="col bg-primary columnHeight border-right border-dark rounded">
+            <div class="bg-light typingAreaHeight pt-3 mt-3">
 
-                Typing Area
+                Word Area for Player 1
 
             </div>
-            <div class="container-fluid">
+            <div>
                 <input type="text" name="playerOneAnswer" value="Typing Area for Player 1" />
             </div>
         </div>
 
-        <div class="col bg-success columnHeight">
-            Second column
-            <input type="text" name="playerTwoAnswer" value="Typing area for Player 2" />
+        <div class="col bg-success columnHeight border-left border-dark rounded">
+            <div class="bg-light typingAreaHeight pt-3 mt-3">
+
+                Word Area for Player 2
+
+            </div>
+            <div>
+                <input type="text" name="playerOneAnswer" value="Typing Area for Player 2" />
+            </div>
         </div>
 
     </div>
