@@ -19,6 +19,10 @@ namespace Assignment2TypingGame.Pages
 
         public void OnGet()
         {
+            string name = "Justin";
+            string dateTime = DateTime.Now.ToShortDateString();
+            ViewData["Name"] = name;
+            ViewData["TimeStamp"] = dateTime;
         }
     }
 }
