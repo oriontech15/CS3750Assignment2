@@ -1,10 +1,15 @@
 @import "theme.css";
-.columnHeight {
-    height: 500px;
-}
 
 .typingAreaHeight{
-    height: 450px;
+    height: 420px;
+}
+
+.round {
+    border-radius: 12px;
+}
+
+input.round {
+    border-radius: 8px;
 }
 
 .nameContainer{
@@ -16,4 +21,75 @@
 .scoreContainer {
     width: 30%;
     float: right;
+}
+
+/* FONT SETUP */
+.timerText {
+    font-family: var(--font-main);
+    font-weight: var(--font-main-bold);
+    font-size: 50px;
+}
+
+.scoreText {
+    font-family: var(--font-score);
+    font-weight: var(--font-score-semibold);
+    font-size: 48px;
+    color: white;
+}
+
+div.wordArea {
+    font-family: var(--font-main);
+    font-weight: var(--font-main-bold);
+    font-size: 18px;
+}
+
+input.inputArea {
+    font-family: var(--font-main);
+    font-weight: var(--font-main-regular);
+    font-size: 17px;
+}
+
+/* PLAYER TILE SETUP */
+
+.playerTile {
+    margin: 20px;
+    padding-top: 10px;
+    height: 520px;
+}
+
+.playerTile.player1 {
+    background-color: var(--color-leaf-green);
+}
+
+.playerTile.player2 {
+    background-color: var(--color-blueberry);
+}
+
+.wordArea {
+    padding: 5px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inputArea {
+    height: 35px;
+}
+
+/* SCORE CONTAINER SETUP */
+
+.scoreContainerLeft {
+    margin-left: 20px;
+}
+
+.scoreContainerRight {
+    margin-right: 20px;
+}
+
+.scoreContainerLeft.player1 {
+    background-color: var(--color-leaf-green);
+}
+
+.scoreContainerRight.player2 {
+    background-color: var(--color-blueberry);
 }
