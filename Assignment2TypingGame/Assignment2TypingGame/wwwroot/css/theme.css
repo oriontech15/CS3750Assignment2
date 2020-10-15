@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+:root {
+    /***********************************/
+    /*             COLORS              */
+    /***********************************/
+
+    /* Primary Colors */
+    --color-wildcat-purple: #492365;
+    --color-university-gray: #575047;
+
+    /* Complements to the Primary Colors */
+    --color-lavendar: #7f56c5;
+    --color-plum: #8446ac;
+    --color-dull-purple: #a391b1;
+    --color-dull-gray: #aa989c;
+
+    /* Secondary Colors */
+    --color-lime: #a3d55d;
+    --color-leaf-green: #009844;
+    --color-dark-green: #005c49;
+    --color-sky-blue: #25cad3;
+    --color-gray-blue: #005f71;
+    --color-blueberry: #346094;
+    --color-maroon: #691940;
+    --color-red: #a52428;
+    --color-pumpkin: #d25d12;
+    --color-yellow: #f6b221;
+    --color-brown: #84471e;
+    --color-dark-choco: #483627;
+
+    /************************************/
+    /*               FONTS              */
+    /************************************/
+
+    /* Main Text Font */
+    --font-main: 'Play', sans-serif;
+    /* Only REG and BOLD are available for this font */
+    --font-main-regular: 400; 
+    --font-main-bold: 700;
+
+    /* Fun Score Font */
+    --font-score: 'Orbitron', sans-serif;
+    --font-score-regular: 400;
+    --font-score-medium: 500;
+    --font-score-semibold: 600;
+    --font-score-bold: 700;
+}
