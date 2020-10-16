@@ -1,8 +1,8 @@
 ﻿@page
 @model IndexModel
-@{
+@*@{
     ViewData["Title"] = "Home page";
-}
+}*@
 
 <form method="post" asp-action="gameBoard">
 
@@ -31,7 +31,7 @@
                 <input class="form-control" asp-for="UserObj.Password" />
                 <span class="text-danger" asp-validation-for="UserObj.Password"></span>
             </div>
-            <a asp-page="gameBoard" class="btn btn-primary">Login</a>
+            <button type="submit" class="btn btn-primary form-control">Login</button>
         </div>
 
         <h5>Existing account:</h5>
@@ -54,7 +54,7 @@
                 <span class="text-danger" asp-validation-for="UserObj.Password"></span>
             </div>
 
-            <a asp-page="gameBoard" class="btn btn-primary">Create Account</a>
+            <button type="submit" class="btn btn-primary form-control">Create Account</button>
         </div>
 
     </div>
