@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+
+    <h1>Typing Game Login</h1>
+
+    <h5>New User:</h5>
+    <form action="/" method="post">
+        <input type="text" name="username" value="username" />
+        <input type="text" name="password" value="password" />
+        <a asp-page="gameBoard" class="btn btn-primary">Create Account</a>
+    </form>
+   
+    <h5>Existing account:</h5>
+    <form action="/" method="post">
+        <input type="text" name="exUsername" value="username" />
+        <input type="text" name="exPassword" value="password" />
+        <a asp-page="gameBoard" class="btn btn-primary">Login</a>
+    </form>
+    
+
+</div>
