@@ -17,6 +17,10 @@ namespace Assignment2TypingGame.Pages
             _logger = logger;
         }
 
+
+        [BindProperty]
+        public User.User UserObj { get; set; }
+
         public void OnGet()
         {
 
