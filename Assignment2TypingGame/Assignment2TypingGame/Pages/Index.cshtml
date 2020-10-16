@@ -3,12 +3,17 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<head>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <script type="module" src="js/site.js"></script>
+</head>
 
+<body onload="setupAuth()">
 <div class="text-center">
 
     <h1>Typing Game Login</h1>
 
-    <h5>New User:</h5>
+        @* <h5>New User:</h5>
     <form action="/" method="post">
         <input type="text" name="username" value="username" />
         <input type="text" name="password" value="password" />
@@ -20,7 +25,41 @@
         <input type="text" name="exUsername" value="username" />
         <input type="text" name="exPassword" value="password" />
         <a asp-page="gameBoard" class="btn btn-primary">Login</a>
-    </form>
-    
-
-</div>
+            </form> *@
+                    
+                    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 mx-auto">
+                    <div class="card card-signin flex-row my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Register</h5>
+                            <form class="form-signin">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputUserame" class="form-control spaced" placeholder="Username"
+                                    required autofocus>
+                                </div>
+                                            
+                                <hr>
+                                            
+                                <div class="form-label-group">
+                                    <input id="passwordField" type="password" class="form-control spaced" placeholder="Password"
+                                    required>
+                                </div>
+                                                                        
+                                <div class="form-label-group">
+                                    <input id="confirmPasswordField" type="password" class="form-control spaced" placeholder="Confirm Password"
+                                    required>
+                                </div>
+                                        
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Create
+                                    Account</button>
+                                <a id="authModeButton" class="d-block text-center mt-2 small" href="#"></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
