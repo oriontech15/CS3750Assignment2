@@ -2,63 +2,64 @@
 @model IndexModel
 @*@{
     ViewData["Title"] = "Home page";
-}*@
+}
+<head>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <script type="module" src="js/site.js"></script>
+</head>
 
-<form method="post" asp-action="gameBoard">
+<body onload="setupAuth()">
+<div class="text-center">
 
+    <h1>Typing Game Login</h1>
 
-    <div class="container">
-
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <h1>Typing Game Login</h1>
-
-        <h5>New User:</h5>
-        <div class="form-group row">
-
-            <div class="col-3">
-                <label asp-for="UserObj.Username"></label>
+        @* <h5>New User:</h5>
+    <form action="/" method="post">
+        <input type="text" name="username" value="username" />
+        <input type="text" name="password" value="password" />
+        <a asp-page="gameBoard" class="btn btn-primary">Create Account</a>
+    </form>
+   
+    <h5>Existing account:</h5>
+    <form action="/" method="post">
+        <input type="text" name="exUsername" value="username" />
+        <input type="text" name="exPassword" value="password" />
+        <a asp-page="gameBoard" class="btn btn-primary">Login</a>
+            </form> *@
+                    
+                    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 mx-auto">
+                    <div class="card card-signin flex-row my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Register</h5>
+                            <form class="form-signin">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputUserame" class="form-control spaced" placeholder="Username"
+                                    required autofocus>
+                                </div>
+                                            
+                                <hr>
+                                            
+                                <div class="form-label-group">
+                                    <input id="passwordField" type="password" class="form-control spaced" placeholder="Password"
+                                    required>
+                                </div>
+                                                                        
+                                <div class="form-label-group">
+                                    <input id="confirmPasswordField" type="password" class="form-control spaced" placeholder="Confirm Password"
+                                    required>
+                                </div>
+                                        
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Create
+                                    Account</button>
+                                <a id="authModeButton" class="d-block text-center mt-2 small" href="#"></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-9">
-                <input class="form-control" asp-for="UserObj.Username" />
-                <span class="text-danger" asp-validation-for="UserObj.Username"></span>
-            </div>
-
-            <div class="col-3">
-                <label asp-for="UserObj.Password"></label>
-            </div>
-            <div class="col-9">
-                <input class="form-control" asp-for="UserObj.Password" />
-                <span class="text-danger" asp-validation-for="UserObj.Password"></span>
-            </div>
-            <button type="submit" class="btn btn-primary form-control">Login</button>
         </div>
-
-        <h5>Existing account:</h5>
-        <div class="form-group row">
-
-            <div class="col-3">
-                <label asp-for="UserObj.Username"></label>
-            </div>
-
-            <div class="col-9">
-                <input class="form-control" asp-for="UserObj.Username" />
-                <span class="text-danger" asp-validation-for="UserObj.Username"></span>
-            </div>
-
-            <div class="col-3">
-                <label asp-for="UserObj.Password"></label>
-            </div>
-            <div class="col-9">
-                <input class="form-control" asp-for="UserObj.Password" />
-                <span class="text-danger" asp-validation-for="UserObj.Password"></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary form-control">Create Account</button>
-        </div>
-
     </div>
-
-</form>
-
-
+</body>
