@@ -27,7 +27,6 @@ namespace Assignment2TypingGame.Pages
 
         public IActionResult OnGet(int? id)
         {
-            //UserObj = new User.User();
 
             //if (id != null)
             //{
