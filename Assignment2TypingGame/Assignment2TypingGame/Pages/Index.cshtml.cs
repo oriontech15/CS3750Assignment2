@@ -2,26 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Assignment2TypingGame.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Logging;
 
 namespace Assignment2TypingGame.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(IUnitOfWork unitOfwork)
         {
-            _logger = logger;
+            _unitOfWork = unitOfwork;
         }
 
         [BindProperty]
         public User.User UserObj { get; set; }
 
-    public void OnGet() {
+        public IActionResult OnGet(int? id)
+        {
 
+            //if (id != null)
+            //{
+            //    UserObj = _context.User.GetFirstOrDefault(u => u.Id == id);
+            //    if (UserObj == null)
+            //    {
+            //        return NotFound();
+            //    }
+            //}
+
+            return Page(); // refresh page call on Get again without id
+
+
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            if (UserObj.Id == 0) // means a brand new category
+            {
+                _unitOfWork.User.Add(UserObj);
+            }
+
+            else
+            {
+                _unitOfWork.User.Update(UserObj);
+            }
+
+            _unitOfWork.Save();
+            return RedirectToPage("./gameBoard");
         }
     }
 }
