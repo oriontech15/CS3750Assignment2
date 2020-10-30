@@ -9,54 +9,37 @@
     <script type="module" src="js/site.js"></script>
 </head>
 
-<form method="post" onload="setupAuth()" asp-action="gameBoard">
+<body>
+<div class="text-center">
 
-
-    <body onload="setupAuth()">
-        <div class="text-center">
-
-            <h1>Typing Game Login</h1>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 col-xl-9 mx-auto">
-                        <div class="card card-signin flex-row my-5">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">Register</h5>
-                                @*<form class="form-signin">*@
-                                    <div class="form-label-group form-group row">
-                                        <input type="text" id="inputUserame" class="form-control spaced" asp-for="UserObj.Username" placeholder="Username"
-                                               required autofocus>
-                                    </div>
-
-                                    <hr>
-
-                                    @*@if (Model.UserObj.Id != 0)
-                                    {
-                                    <input type="hidden" asp-for="UserObj.Id" />}*@
-
-                                    <div class="form-label-group">
-                                        <input id="passwordField" type="password" class="form-control spaced" asp-for="UserObj.Password" placeholder="Password"
-                                               required>
-                                    </div>
-
-                                    <div class="form-label-group">
-                                        <input id="confirmPasswordField" type="password" class="form-control spaced" placeholder="Confirm Password"
-                                               required>
-                                    </div>
-
-                                    <button class="btn btn-lg btn-primary btn-block text-uppercase form-control" type="submit">
-                                        Create
-                                        Account
-                                    </button>
-                                    <a id="authModeButton" class="d-block text-center mt-2 small"></a>
-                                @*</form>*@
-                            </div>
+    <h1>Typing Game Login</h1>
+                    
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-9 mx-auto">
+                    <div class="card card-signin flex-row my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Register</h5>
+                            <form class="form-signin">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputUserame" class="form-control spaced" placeholder="Username"
+                                    required autofocus>
+                                </div>
+                                            
+                                <hr>
+                                            
+                                <div class="form-label-group">
+                                    <input id="passwordField" type="password" class="form-control spaced" placeholder="Password"
+                                    required>
+                                </div>
+                                        
+                                <button asp-page="gameBoard" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Create
+                                    Account</button>
+                                <a id="authModeButton" class="d-block text-center mt-2 small" href="#"></a>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-     
         </div>
     </body>
-</form>

@@ -19,13 +19,11 @@ namespace Assignment2TypingGame.Pages
             _unitOfWork = unitOfwork;
         }
 
-
         [BindProperty]
         public User.User UserObj { get; set; }
 
         public IActionResult OnGet(int? id)
         {
-            //UserObj = new User.User();
 
             //if (id != null)
             //{
