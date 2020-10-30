@@ -11,6 +11,7 @@ namespace Assignment2TypingGame.Pages
     {
         public void OnGet()
         {
+            
         }
     }
 }
