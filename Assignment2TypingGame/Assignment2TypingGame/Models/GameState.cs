@@ -1,16 +1,19 @@
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
 namespace Assignment2TypingGame.Models.GameState
 {
     public class GameState
     {
-        private string name {get; set;};
-        private int score {get; set;};
+        private string name {get; set;}
+        private int score {get; set;}
 
         // Word Lists
-        private List<string> wordList {get; set;};
-        private List<string> currentWordList {get; set;};
-        private List<string> completedWordList {get; set;};
+        private List<string> wordList {get; set;}
+        private List<string> currentWordList {get; set;}
+        private List<string> completedWordList {get; set;}
 
-        private List<Dictionary<string, string>> positions {get; set;};
+        private List<Dictionary<string, string>> positions {get; set;}
 
         public GameState()
         {
@@ -18,9 +21,9 @@ namespace Assignment2TypingGame.Models.GameState
             // gameState.name // == json["name"]
         }
 
-        public IActionResult Get() {
+        //public IActionResult Get() {
 
-            return JSON (new JavaScriptSerializer().Deserialize<GameState>(rawJSON););
-        }
+        //    return JSON (new JavaScriptSerializer().Deserialize<GameState>(rawJSON););
+        //}
     }
 }
