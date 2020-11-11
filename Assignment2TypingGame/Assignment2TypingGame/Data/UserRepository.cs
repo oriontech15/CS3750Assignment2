@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Assignment2TypingGame.Data
 {
-    public class UserRepository : Repository<User>, IUserRepository
+    public class UserRepository : Repository<Player>, IUserRepository
     {
 
         private readonly ApplicationDbContext _db;
@@ -18,7 +18,7 @@ namespace Assignment2TypingGame.Data
             _db = db;
         }
 
-        public void Update(User user)
+        public void Update(Player user)
         {
             throw new NotImplementedException();
         }
