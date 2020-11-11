@@ -1,4 +1,4 @@
-﻿const words = <% this.#Assignment2TypingGame.Csharp.GetWords(1) %>
+﻿//const words = <% this.#Assignment2TypingGame.Csharp.GetWords(1) %>
 
 function JSgetWords() {
     return words;

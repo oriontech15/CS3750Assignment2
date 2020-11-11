@@ -25,20 +25,25 @@
     <div class="row">
         <div class="col playerTile player1 round">
             <div class="bg-light typingAreaHeight pt-3 mt-3 wordArea round">
-                Word Area for Player 1
+                <p>Word Area for Player 1</p>
+                <ul id="player2GameStateMessage"></ul>
             </div>
             <div>
-                <input type="text" class="col inputArea round" name="playerOneAnswer" value="Typing Area for Player 1" />
+                <input id="player1Input" type="text" class="col inputArea round" name="playerOneAnswer" value="Typing Area for Player 1" />
             </div>
         </div>
 
         <div class="col playerTile player2 round">
             <div class="bg-light typingAreaHeight pt-3 mt-3 wordArea round">
-                Word Area for Player 2
+                <p>Word Area for Player 2</p>
+                <ul id="player1GameStateMessage"></ul>
             </div>
             <div>
-                <input type="text" class="col inputArea round" name="playerOneAnswer" value="Typing Area for Player 2" />
+                <input id="player2Input" type="text" class="col inputArea round" name="playerOneAnswer" value="Typing Area for Player 2" />
             </div>
         </div>
     </div>
 </div>
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/gameState.js"></script>
