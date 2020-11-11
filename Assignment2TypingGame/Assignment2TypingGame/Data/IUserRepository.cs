@@ -7,10 +7,10 @@ using System.Text;
 
 namespace Assignment2TypingGame.Data
 {
-    public interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IRepository<Player>
     {
         
 
-        void Update(User user);
+        void Update(Player user);
     }
 }

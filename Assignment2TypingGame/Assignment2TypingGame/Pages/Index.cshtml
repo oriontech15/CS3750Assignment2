@@ -12,42 +12,41 @@
 <body>
     <div class="text-center">
 
-        <h1>Typing Game Login</h1>
+        <h1 class="m-3 p-3">Welcome</h1>
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-xl-6 mx-auto">
                     <div class="card card-signin flex-row my-5">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Register</h5>
-                            @*<form class="form-signin">*@
-                            <div class="form-label-group">
-                                <input type="text" id="inputUserame" class="form-control spaced"
-                                asp-for="UserObj.Username" placeholder="Username" required autofocus>
-                            </div>
+                            <h5 class="card-title text-center">Enter your name: </h5>
+                            <form class="form-signin">
+                                <div class="form-label-group">
+                                    <input type="text" id="inputUserame" class="form-control spaced"
+                                           asp-for="Player.Username" placeholder="Player Name" required autofocus>
+                                </div>
 
-                            <hr>
+                                <hr>
 
-                            @*@if (Model.UserObj.Id != 0)
-                                {
-                                <input type="hidden" asp-for="UserObj.Id" />}*@
+                                @*@if (Model.UserObj.Id != 0)
+                                    {
+                                    <input type="hidden" asp-for="UserObj.Id" />}*@
 
-                            <div class="form-label-group">
-                                <input id="passwordField" type="password" class="form-control spaced"
-                                asp-for="UserObj.Password" placeholder="Password" required>
-                            </div>
+                                @*<div class="form-label-group">
+                                        <input id="passwordField" type="password" class="form-control spaced"
+                                        asp-for="UserObj.Password" placeholder="Password" required>
+                                    </div>
 
-                            <div class="form-label-group">
-                                <input id="confirmPasswordField" type="password" class="form-control spaced"
-                                placeholder="Confirm Password" required>
-                            </div>
+                                    <div class="form-label-group">
+                                        <input id="confirmPasswordField" type="password" class="form-control spaced"
+                                        placeholder="Confirm Password" required>
+                                    </div>*@
 
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase form-control" type="submit">
-                                Create
-                                Account
-                            </button>
-                            <a id="authModeButton" class="d-block text-center mt-2 small">Sign In</a>
-                            @*</form>*@
+                                    <button class="btn btn-lg btn-primary btn-block text-uppercase form-control" type="submit" asp-area="" asp-page="/gameReady" >
+                                        Submit
+                                    </button>
+                                    @*<a id="authModeButton" class="d-block text-center mt-2 small">Sign In</a>*@
+                            </form>
                         </div>
                     </div>
                 </div>

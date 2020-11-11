@@ -14,7 +14,7 @@ public class ApplicationDbContext : DbContext
     }
 
     public readonly ApplicationDbContext _db;
-    public DbSet<User> User { get; set; }
+    public DbSet<Player> User { get; set; }
 
 
     //public UnitOfWork(ApplicationDbContext db)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2TypingGame.Pages.User
 {
-    public class User
+    public class Player
     {
 
         [Key]
