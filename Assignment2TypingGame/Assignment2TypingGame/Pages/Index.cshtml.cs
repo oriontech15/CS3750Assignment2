@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Assignment2TypingGame.Data;
 using Assignment2TypingGame.Pages.LogIn;
+using Assignment2TypingGame.Pages.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -23,7 +24,7 @@ namespace Assignment2TypingGame.Pages
         Salt salt = new Salt();
 
         [BindProperty]
-        public User.User UserObj { get; set; }
+        public Player Player { get; set; }
 
         public IActionResult OnGet(int? id)
         {
@@ -45,24 +46,24 @@ namespace Assignment2TypingGame.Pages
         public IActionResult OnPost()
         {
 
-            UserObj.Salt = salt.salt();
+            //UserObj.Salt = salt.salt();
 
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
-            if (UserObj.Id == 0) // means a brand new category
-            {
-                _unitOfWork.User.Add(UserObj);
-            }
+            //if (UserObj.Id == 0) // means a brand new category
+            //{
+            //    _unitOfWork.User.Add(UserObj);
+            //}
 
-            else
-            {
-                _unitOfWork.User.Update(UserObj);
-            }
+            //else
+            //{
+            //    _unitOfWork.User.Update(UserObj);
+            //}
 
-            _unitOfWork.Save();
+            //_unitOfWork.Save();
             return RedirectToPage("./gameBoard");
         }
     }
