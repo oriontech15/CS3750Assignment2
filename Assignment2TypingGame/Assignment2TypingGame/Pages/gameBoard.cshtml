@@ -1,11 +1,8 @@
 ﻿@page
 @model Assignment2TypingGame.Pages.gameBoardModel
 
-
-
+<body>
 <div class="text-center"> Game Board Page </div>
-
-
 <div class="container">
     <div class="row">
         @*<div>
@@ -14,15 +11,16 @@
         <div class="col text-center scoreContainerLeft scoreText player1 round">
             000
         </div>
-        <div class="col text-center timerText">
-            00:00
-        </div>
+          <div class="col text-center timerText">
+                <p>
+                    <input name="timer" id="timer" value="60" />
+                </p>
+            </div>
         <div class="col text-center scoreContainerRight scoreText player2 round">
             000
         </div>
     </div>
 </div>
-
 
 <div class="container rounded">
     <div class="row">
@@ -36,8 +34,9 @@
                 <input id="player1Input" type="text" class="col inputArea round" name="playerOneAnswer" value="Typing Area for Player 1" />
             </div>
         </div>
+    </div>
 
-        <div class="col playerTile player2 round">
+<div class="col playerTile player2 round">
             <div class="bg-light typingAreaHeight pt-3 mt-3 wordArea round">
                 <p>Word Area for Player 2</p>
                 <canvas id="canvasPlayer2" width="450px" height="350px" style="background-color:black"></canvas>
@@ -50,6 +49,14 @@
     </div>
 </div>
 
+</body>
+
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/gameState.js"></script>
 <script src="~/js/canvas.js"></script>
+
+
+@section Scripts{
+    <script src="~/js/gameBoard.js"></script>
+}
+
