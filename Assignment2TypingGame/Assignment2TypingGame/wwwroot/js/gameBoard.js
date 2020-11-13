@@ -1,9 +1,11 @@
 ﻿//const words = <% this.#Assignment2TypingGame.Csharp.GetWords(1) %>
+
 var seconds = 60;
 
 $(document).ready(function () {
     startGame();
 });
+
 
 function JSgetWords() {
     return words;

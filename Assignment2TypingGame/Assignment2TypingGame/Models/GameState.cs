@@ -5,15 +5,16 @@ namespace Assignment2TypingGame.Models.GameState
 {
     public class GameState
     {
-        private string name {get; set;}
-        private int score {get; set;}
+        public string name {get; set;}
+        public string currentInput {get; set;}
+        public int score {get; set;}
 
         // Word Lists
-        private List<string> wordList {get; set;}
-        private List<string> currentWordList {get; set;}
-        private List<string> completedWordList {get; set;}
+        public List<string> wordList {get; set;}
+        public List<string> currentWordList {get; set;}
+        public List<string> completedWordList {get; set;}
 
-        private List<Dictionary<string, string>> positions {get; set;}
+        public List<Dictionary<string, string>> positions {get; set;}
 
         public GameState()
         {

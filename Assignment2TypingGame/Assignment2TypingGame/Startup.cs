@@ -61,7 +61,7 @@ namespace Assignment2TypingGame
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapHub<ChatHub>("/chathub");
+                endpoints.MapHub<GameStateHub>("/GameStateHub");
             });
         }
     }
