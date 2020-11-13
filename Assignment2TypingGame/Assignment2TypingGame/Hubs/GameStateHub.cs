@@ -11,7 +11,6 @@ namespace SignalRChat.Hubs
         public async Task SendGameState(string user, string gameState)
         {
             GameState gameStateObj = JsonSerializer.Deserialize<GameState>(gameState);
-            gameStateObj.name = gameStateObj.name.ToUpper();
             string serializedGameState = JsonSerializer.Serialize(gameStateObj);
             await Clients.All.SendAsync("ReceiveGameState", user, serializedGameState);
         }
