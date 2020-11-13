@@ -1,12 +1,3 @@
 {
-  "dependencies": {
-    "mssql1": {
-      "type": "mssql",
-      "connectionId": "TypingGameDbConnectionString"
-    },
-    "mssql2": {
-      "type": "mssql",
-      "connectionId": "ApplicationDbContext"
-    }
-  }
+  "dependencies": {}
 }

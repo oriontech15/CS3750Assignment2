@@ -27,6 +27,7 @@ input.round {
 .timerText {
     font-family: var(--font-main);
     font-weight: var(--font-main-bold);
+    border: none;
     font-size: 50px;
 }
 
