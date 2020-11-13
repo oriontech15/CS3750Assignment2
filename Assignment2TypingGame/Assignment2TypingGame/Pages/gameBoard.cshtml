@@ -29,6 +29,7 @@
         <div class="col playerTile player1 round">
             <div class="bg-light typingAreaHeight pt-3 mt-3 wordArea round">
                 <p>Word Area for Player 1</p>
+                <canvas id="canvasPlayer1" width="450px" height="350px" style="background-color:black"></canvas>
                 <ul id="player2GameStateMessage"></ul>
             </div>
             <div>
@@ -39,6 +40,7 @@
         <div class="col playerTile player2 round">
             <div class="bg-light typingAreaHeight pt-3 mt-3 wordArea round">
                 <p>Word Area for Player 2</p>
+                <canvas id="canvasPlayer2" width="450px" height="350px" style="background-color:black"></canvas>
                 <ul id="player1GameStateMessage"></ul>
             </div>
             <div>
@@ -50,3 +52,4 @@
 
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/gameState.js"></script>
+<script src="~/js/canvas.js"></script>
