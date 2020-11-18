@@ -94,3 +94,14 @@ input.inputArea {
 .scoreContainerRight.player2 {
     background-color: var(--color-blueberry);
 }
+
+
+/*WORD COLOR*/
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
