@@ -134,3 +134,13 @@ input.inputArea {
 .player2 {
     background-color: var(--color-gray);
 }
+
+/*WORD COLOR*/
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
