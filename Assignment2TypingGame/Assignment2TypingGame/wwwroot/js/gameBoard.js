@@ -32,7 +32,7 @@ function runClock() {
 
     seconds -= 1;
     // This will decrement the seconds variable by 1
-    document.getElementById("timer").setAttribute("value", seconds);
+    document.getElementById("timer").innerHTML = seconds;
     // This will set the timer element to what is being seen in the seconds variable
     if (seconds == 0) {
         stopClock();
@@ -42,3 +42,14 @@ function runClock() {
 function stopClock() {
     clearInterval(clockId)
 }
+
+function loadStartingScore() {
+    document.getElementById("player1Score").innerHTML = "000";
+    document.getElementById("player2Score").innerHTML = "000";
+}
+
+function init() {
+    loadStartingScore();
+}
+
+init();

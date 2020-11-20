@@ -1,61 +1,53 @@
-﻿@page
+﻿@page 
 @model Assignment2TypingGame.Pages.gameBoardModel
 
 <body>
-<div class="text-center"> Game Board Page </div>
-<div class="container">
-    <div class="row">
-        @*<div>
-            <input id="txtName" asp-for="@Model.Player.Username" type="text" class="form-control" />
-        </div>*@
-        <div class="col text-center scoreContainerLeft scoreText player1 round">
-            000
-        </div>
-          <div class="col">
-                <p>
-                    <input class="text-center timerText" name="timer" id="timer" value="60" />
-                </p>
-            </div>
-        <div class="col text-center scoreContainerRight scoreText player2 round">
-            000
+    <div class="text-center"> Game Board Page </div>
+    <div class="container-fluid">
+        <div class="row">
+            @*
+            <div>
+                <input id="txtName" asp-for="@Model.Player.Username" type="text" class="form-control" />
+            </div>*@
+            <div id="player1Score" class="col scoreContainerLeft scoreText text-center player1 round"></div>
+            <div class="col-sm text-center timerText" name="timer" id="timer"></div>
+            <div id="player2Score" class="col scoreContainerRight scoreText text-center player2 round"></div>
         </div>
     </div>
-</div>
+    <div class="container-fluid rounded">
+        <div class="row height-seventy">
+            <div class="col playerTile player1 round">
+                <div class="canvasHeight">
+                    <div class="col mt-1 h-100 round">
+                        <canvas id="canvasPlayer1" class="h-100 round" width="1000px" height="1000px"></canvas>
+                    </div>
+                </div>
+                <div class="typingAreaHeight">
+                    <div class="col h-50 mt-2">
+                        <input id="player1Input" type="text" class="col h-100 inputArea round" name="playerOneAnswer" value="Typing Area for Player 1" />
+                    </div>
+                </div>
+            </div>
 
-<div class="container rounded">
-    <div class="row">
-        <div class="col playerTile player1 round">
-            <div class="bg-light typingAreaHeight pt-3 mt-3 wordArea round">
-                <p>Word Area for Player 1</p>
-                <canvas id="canvasPlayer1" width="450px" height="350px" style="background-color:black"></canvas>
-                <ul id="player2GameStateMessage"></ul>
-            </div>
-            <div>
-                <input id="player1Input" type="text" class="col inputArea round" name="playerOneAnswer" value="Typing Area for Player 1" />
-            </div>
-        </div>
-
-<div class="col playerTile player2 round">
-            <div class="bg-light typingAreaHeight pt-3 mt-3 wordArea round">
-                <p>Word Area for Player 2</p>
-                <canvas id="canvasPlayer2" width="450px" height="350px" style="background-color:black"></canvas>
-                <ul id="player1GameStateMessage"></ul>
-            </div>
-            <div>
-                <input id="player2Input" type="text" class="col inputArea round" name="playerOneAnswer" value="Typing Area for Player 2" />
+            <div class="col playerTile player2 round">
+                <div class="canvasHeight">
+                    <div class="col mt-1 h-100 round">
+                        <canvas id="canvasPlayer2" class="h-100 round" width="1000px" height="1000px" style="background-color:black"></canvas>
+                    </div>
+                </div>
+                <div class="typingAreaHeight">
+                    <div class="col h-50 mt-2">
+                        <input id="player2Input" style="background-color:black; color:gray;" type="text" class="col h-100 inputArea round" name="playerTwoAnswer" value="Typing Area for Player 2" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
 </body>
 
+@section Scripts{
+<script src="~/js/gameBoard.js"></script>
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/gameState.js"></script>
 <script src="~/js/canvas.js"></script>
-
-
-@section Scripts{
-    <script src="~/js/gameBoard.js"></script>
 }
-
