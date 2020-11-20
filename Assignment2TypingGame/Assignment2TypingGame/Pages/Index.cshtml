@@ -22,7 +22,7 @@
                             <h5 class="card-title text-center">Enter your name: </h5>
                             <form class="form-signin">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputUserame" class="form-control spaced"
+                                    <input type="text" id="inputUsername" class="form-control spaced"
                                            asp-for="Player.Username" placeholder="Player Name" required autofocus>
                                 </div>
 
@@ -42,10 +42,10 @@
                                         placeholder="Confirm Password" required>
                                     </div>*@
 
-                                    <button class="btn btn-lg btn-primary btn-block text-uppercase form-control" type="submit" asp-area="" asp-page="/gameReady" >
-                                        Submit
-                                    </button>
-                                    @*<a id="authModeButton" class="d-block text-center mt-2 small">Sign In</a>*@
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase form-control" onclick="saveUsername()" id="submitBtn" name="submitBtn" type="submit" asp-area="" asp-page="/gameReady">
+                                    Submit
+                                </button>
+                                @*<a id="authModeButton" class="d-block text-center mt-2 small">Sign In</a>*@
                             </form>
                         </div>
                     </div>
@@ -54,3 +54,8 @@
         </div>
     </div>
 </body>
+
+@section Scripts{
+    <script src="~/js/gameBoard.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+}
