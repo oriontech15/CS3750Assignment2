@@ -1,9 +1,4 @@
 @import "theme.css";
-
-.typingAreaHeight{
-    height: 420px;
-}
-
 .round {
     border-radius: 12px;
 }
@@ -12,18 +7,36 @@ input.round {
     border-radius: 8px;
 }
 
-.nameContainer{
+.nameContainer {
     width: 30%;
     float: left;
-
 }
 
-.scoreContainer {
-    width: 30%;
-    float: right;
+.canvasHeight {
+    height: 90%!important;
 }
+
+.typingAreaHeight {
+    height: 10%!important;
+}
+
+.h-80 {
+    height: 80%!important;
+}
+
+.h-50 {
+    height: 50%!important;
+}
+
+#canvasPlayer1,
+#canvasPlayer2 {
+    background-color: white;
+    width: 100%;
+}
+
 
 /* FONT SETUP */
+
 .timerText {
     font-family: var(--font-main);
     font-weight: var(--font-main-bold);
@@ -50,12 +63,38 @@ input.inputArea {
     font-size: 17px;
 }
 
+.row.noMargin {
+    margin: 0px!important;
+}
+
+
 /* PLAYER TILE SETUP */
+
+.height-full {
+    height: 100vh;
+}
+
+.height-eighty {
+    height: 80vh;
+}
+
+.height-seventy {
+    height: 70vh;
+}
+
+.height-sixty {
+    height: 60vh;
+}
+
+.height-half {
+    height: 50vh;
+}
 
 .playerTile {
     margin: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
     padding-top: 10px;
-    height: 520px;
 }
 
 .playerTile.player1 {
@@ -63,7 +102,7 @@ input.inputArea {
 }
 
 .playerTile.player2 {
-    background-color: var(--color-blueberry);
+    background-color: var(--color-gray);
 }
 
 .wordArea {
@@ -77,20 +116,21 @@ input.inputArea {
     height: 35px;
 }
 
+
 /* SCORE CONTAINER SETUP */
 
 .scoreContainerLeft {
-    margin-left: 20px;
+    margin-left: 80px;
 }
 
 .scoreContainerRight {
-    margin-right: 20px;
+    margin-right: 80px;
 }
 
-.scoreContainerLeft.player1 {
+.player1 {
     background-color: var(--color-leaf-green);
 }
 
-.scoreContainerRight.player2 {
-    background-color: var(--color-blueberry);
+.player2 {
+    background-color: var(--color-gray);
 }
