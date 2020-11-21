@@ -10,11 +10,11 @@ namespace Assignment2TypingGame.Models.GameState
         public int score {get; set;}
 
         // Word Lists
-        public List<string> wordList {get; set;}
+        //public List<string> wordList {get; set;}
         public List<string> currentWordList {get; set;}
-        public List<string> completedWordList {get; set;}
+        //public List<string> completedWordList {get; set;}
 
-        public List<Dictionary<string, string>> positions {get; set;}
+        public List<Dictionary<string, int>> positions {get; set;}
 
         public GameState()
         {
