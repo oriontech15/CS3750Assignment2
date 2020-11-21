@@ -34,6 +34,57 @@ let wordColorPlayer1 = '#000';
 let wordColorPlayer2 = '#FFF';
 let highlightColor = 'red';
 
+var player1input = document.getElementById('player1Input')
+var player1Point = 0
+
+player1input.addEventListener('keyup', function (e) {
+    input = document.getElementById('player1Input').value
+    if (input == word1) {
+        word1 = getNextWord()
+        word1Y = 0
+        player1Point += 1
+        document.getElementById('player1Input').value = ""
+        document.getElementById('player1Score').innerHTML = String(player1Point)
+    }
+    if (input == word2) {
+        word2 = getNextWord()
+        word2Y = 0
+        player1Point += 1
+        document.getElementById('player1Input').value = ""
+        document.getElementById('player1Score').innerHTML = player1Point
+    }
+    if (input == word3) {
+        word3 = getNextWord()
+        word3Y = 0
+        player1Point += 1
+        document.getElementById('player1Input').value = ""
+        document.getElementById('player1Score').innerHTML = player1Point
+    }
+    if (input == word3) {
+        word3 = getNextWord()
+        word3Y = 0
+        player1Point += 1
+        document.getElementById('player1Input').value = ""
+        document.getElementById('player1Score').innerHTML = player1Point
+    }
+    if (input == word4) {
+        word4 = getNextWord()
+        word4Y = 0
+        player1Point += 1
+        document.getElementById('player1Input').value = ""
+        document.getElementById('player1Score').innerHTML = player1Point
+    }
+    if (input == word5) {
+        word5 = getNextWord()
+        word5Y = 0
+        player1Point += 1
+        document.getElementById('player1Input').value = ""
+        document.getElementById('player1Score').innerHTML = player1Point
+    }
+    
+})
+
+
 function init() {
 
     gameLoop();

@@ -2,13 +2,19 @@
 @model Assignment2TypingGame.Pages.gameBoardModel
 
 <body>
+    <div class="row">
+        <div><h5> Welcome: &nbsp;</h5></div>
+        <div class="text-dark text-center font-weight-bold" name="playerName" id="playerName"></div>
+    </div>
+    
     <div class="text-center"> Game Board Page </div>
     <div class="container-fluid">
         <div class="row">
             @*
-            <div>
-                <input id="txtName" asp-for="@Model.Player.Username" type="text" class="form-control" />
-            </div>*@
+                <div>
+                    <input id="txtName" asp-for="@Model.Player.Username" type="text" class="form-control" />
+                </div>*@
+
             <div id="player1Score" class="col scoreContainerLeft scoreText text-center player1 round"></div>
             <div class="col-sm text-center timerText" name="timer" id="timer"></div>
             <div id="player2Score" class="col scoreContainerRight scoreText text-center player2 round"></div>
