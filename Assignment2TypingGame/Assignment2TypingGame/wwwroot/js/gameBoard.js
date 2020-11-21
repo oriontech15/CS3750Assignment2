@@ -20,6 +20,9 @@ function startGame() {
     
     startClock();
     runClock();
+    let name = document.cookie;
+    document.getElementById("playerName").innerHTML = name;
+    //document.getElementById("playerName").innerHTML = localStorage.username;
 }
 
 function startClock() {
@@ -53,3 +56,12 @@ function init() {
 }
 
 init();
+
+//var Btn = document.getElementById("submitBtn");
+
+function saveUsername () {
+    var name = document.getElementById("inputUsername").value;
+    document.cookie = name;
+    //localStorage.username = document.getElementById("inputUsername").value;
+  
+}
