@@ -4,6 +4,9 @@ var word3Speed = getRandomValue();
 var word4Speed = getRandomValue();
 var word5Speed = getRandomValue();
 
+var words = [ "word", "the", "be", "to", "of", "and", "in", "that", "have", "it", "for", "not", "on", "with", "he", "as", "you", "do", "at", "this", "but", "his", "by", "from", "they", "we", "say", "her", "she", "or", "an", "will", "my", "one", "all", "would", "there", "their", "what", "so", "up", "out", "if", "about", "who", "get", "which", "go", "me", "when", "make", "can", "like", "time", "no", "just", "him", "know", "take", "people", "into", "year", "your", "good", "some", "could", "them", "see", "other", "than", "then", "now", "look", "only", "come", "its", "over", "think", "also", "back", "after", "use", "two", "how", "our", "work", "first", "well", "way", "even", "new", "want", "because", "any", "these", "give", "day", "most", "us" ]
+var wordIndex = 0
+
 var word1 = "backyard"
 var word2 = "backwards"
 var word3 = "backup"
@@ -164,6 +167,13 @@ function compareInput(word, input) {
 
 function getRandomValue() {
     return (Math.random() * (0.9 - 0.2) + 0.2)
+}
+
+function getNextWord() {
+    var nextword
+    nextword = words[wordIndex]
+    wordIndex += 1
+    return nextword
 }
 
 init();
