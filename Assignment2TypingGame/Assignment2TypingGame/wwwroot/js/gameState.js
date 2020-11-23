@@ -25,10 +25,6 @@ connection.on("ReceiveGameState", function (user, gameState) {
         //document.getElementById("otherPlayerName").value = obj.name;
         document.getElementById("player1Score").innerHTML = obj.score;
         document.getElementById("player1Input").value = obj.currentInput;
-
-        //var encodedMsg = obj.name + "---->" + obj.currentInput;
-        //var li = document.createElement("li");
-        //li.textContent = encodedMsg;
     }
 
     else {
@@ -40,8 +36,6 @@ connection.on("ReceiveGameState", function (user, gameState) {
         document.getElementById("player2Score").value = obj.score;
         document.getElementById("player2Input").value = obj.currentInput;
 
-        //var encodedMsg = obj.name + "---->" + obj.currentInput;
-        //document.getElementById("otherPlayerName").value = obj.name;
     }
 });
 
@@ -62,8 +56,6 @@ player1Input.addEventListener("keyup", (event) => {
 
     console.log(event.key);
     console.log(event.code);
-
-    // if (event.code === "Enter") {
 
     //var user = document.getElementById("playerName").value;
     var user = "Player 1";
@@ -87,7 +79,6 @@ player1Input.addEventListener("keyup", (event) => {
     //player1Input.value = "";
 
     event.preventDefault();
-    //}
 });
 
 // Execute a function when the user releases a key on the keyboard -- and send the message
@@ -97,8 +88,6 @@ player2Input.addEventListener("keyup", (event) => {
 
     console.log(event.key);
     console.log(event.code);
-
-    //if (event.code === "Enter") {
 
     //Gathering the information to be sent
     // var user = document.getElementById("playerName").value;
@@ -118,5 +107,5 @@ player2Input.addEventListener("keyup", (event) => {
 
     // player2Input.value = "";
     event.preventDefault();
-    // }
+   
 });
