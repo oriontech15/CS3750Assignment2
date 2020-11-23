@@ -12,6 +12,7 @@ namespace SignalRChat.Hubs
         {
             GameState gameStateObj = JsonSerializer.Deserialize<GameState>(gameState);
             string serializedGameState = JsonSerializer.Serialize(gameStateObj);
+            //This function when called will send the message received out to everybody. The message is titled "ReceiveGameState"
             await Clients.All.SendAsync("ReceiveGameState", user, serializedGameState);
         }
     }

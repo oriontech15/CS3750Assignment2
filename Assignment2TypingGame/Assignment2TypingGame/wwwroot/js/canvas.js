@@ -13,7 +13,7 @@ var word3 = "backup"
 var word4 = "back"
 var word5 = "backpack"
 
-var input = "bac"
+var input = ""
 
 var word1Y = 0;
 var word2Y = 0;
