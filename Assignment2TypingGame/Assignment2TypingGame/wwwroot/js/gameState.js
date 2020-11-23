@@ -23,7 +23,7 @@ connection.on("ReceiveGameState", function (user, gameState) {
         updateCanvas(obj);
 
         //document.getElementById("otherPlayerName").value = obj.name;
-        document.getElementById("player1Score").value = obj.score;
+        document.getElementById("player1Score").innerHTML = obj.score;
         document.getElementById("player1Input").value = obj.currentInput;
 
         //var encodedMsg = obj.name + "---->" + obj.currentInput;
