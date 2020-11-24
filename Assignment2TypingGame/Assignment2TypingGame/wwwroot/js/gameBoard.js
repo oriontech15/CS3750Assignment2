@@ -2,7 +2,7 @@
 
 var seconds = 60;
 
-$(document).ready(function () {
+$(document).ready(function() {
     startGame();
 });
 
@@ -17,11 +17,11 @@ function getNextWord() {
 
 //This function is called when the start game button is clicked
 function startGame() {
-    
+
     startClock();
     runClock();
     let name = document.cookie;
-    document.getElementById("playerName").innerHTML = name;
+    document.getElementById("playerName").value = name;
     //document.getElementById("playerName").innerHTML = localStorage.username;
 }
 
@@ -59,9 +59,9 @@ init();
 
 //var Btn = document.getElementById("submitBtn");
 
-function saveUsername () {
+function saveUsername() {
     var name = document.getElementById("inputUsername").value;
     document.cookie = name;
     //localStorage.username = document.getElementById("inputUsername").value;
-  
+
 }
