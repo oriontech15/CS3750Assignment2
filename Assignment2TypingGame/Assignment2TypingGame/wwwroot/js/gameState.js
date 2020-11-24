@@ -14,7 +14,7 @@ connection.on("ReceiveGameState", function(user, gameState) {
 
     var currentUser = document.getElementById("playerName").value;
 
-    if (user == currentUser) {
+    if (user != currentUser) {
         //Checking to see if this message came from a different player
         //if (user != currentUser) {
 
@@ -22,19 +22,17 @@ connection.on("ReceiveGameState", function(user, gameState) {
         const obj = JSON.parse(gameState);
         updateCanvas(obj);
 
-        //document.getElementById("otherPlayerName").value = obj.name;
-        document.getElementById("player1Score").innerHTML = obj.score;
-        document.getElementById("player1Input").value = obj.currentInput;
-    }
-
-        const obj = JSON.parse(gameState);
-        updateCanvas(obj);
-
-        //document.getElementById("otherPlayerName").value = obj.name;
-        document.getElementById("player2Score").value = obj.score;
+        document.getElementById("otherPlayerName").innerHTML = obj.name;
+        document.getElementById("player2Score").innerHTML = obj.score;
         document.getElementById("player2Input").value = obj.currentInput;
-
     }
+
+        //const obj = JSON.parse(gameState);
+        //updateCanvas(obj);
+
+        ////document.getElementById("otherPlayerName").value = obj.name;
+        //document.getElementById("player2Score").value = obj.score;
+        //document.getElementById("player2Input").value = obj.currentInput;
 });
 
 connection.start().then(function() {
@@ -55,8 +53,8 @@ player1Input.addEventListener("keyup", (event) => {
     console.log(event.key);
     console.log(event.code);
 
-    //var user = document.getElementById("playerName").value;
-    var user = "Player 1";
+    var user = document.getElementById("playerName").value;
+    //var user = "Player 1";
 
     //New object holding key value pairs
     var obj = new Object();
@@ -79,31 +77,31 @@ player1Input.addEventListener("keyup", (event) => {
     event.preventDefault();
 });
 
-// Execute a function when the user releases a key on the keyboard -- and send the message
-player2Input.addEventListener("keyup", (event) => {
+//// Execute a function when the user releases a key on the keyboard -- and send the message
+//player2Input.addEventListener("keyup", (event) => {
 
-    // Number 13 is the "Enter" key on the keyboard
+//    // Number 13 is the "Enter" key on the keyboard
 
-    console.log(event.key);
-    console.log(event.code);
+//    console.log(event.key);
+//    console.log(event.code);
 
-    //Gathering the information to be sent
-    // var user = document.getElementById("playerName").value;
-    var user = "Player 2";
-    var obj = new Object();
-    obj["name"] = user;
-    obj["currentInput"] = document.getElementById("player2Input").value;
-    obj["currentWordList"] = words;
-    obj["score"] = document.getElementById("player2Score").value;
-    var json = JSON.stringify(obj);
+//    //Gathering the information to be sent
+//    // var user = document.getElementById("playerName").value;
+//    var user = "Player 2";
+//    var obj = new Object();
+//    obj["name"] = user;
+//    obj["currentInput"] = document.getElementById("player2Input").value;
+//    obj["currentWordList"] = words;
+//    obj["score"] = document.getElementById("player2Score").value;
+//    var json = JSON.stringify(obj);
 
-    //Client side sending the message/object to the server side
-    //SendGameState is the name of the function on the server side / in the c# file
-    connection.invoke("SendGameState", user, json).catch(function(err) {
-        return console.error(err.toString());
-    });
+//    //Client side sending the message/object to the server side
+//    //SendGameState is the name of the function on the server side / in the c# file
+//    connection.invoke("SendGameState", user, json).catch(function(err) {
+//        return console.error(err.toString());
+//    });
 
-    // player2Input.value = "";
-    event.preventDefault();
+//    // player2Input.value = "";
+//    event.preventDefault();
    
-});
+//});
