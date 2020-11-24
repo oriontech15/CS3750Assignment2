@@ -46,7 +46,7 @@ player1input.addEventListener('keyup', function(e) {
         word1Y = 0
         player1Point += 1
         document.getElementById('player1Input').value = ""
-        document.getElementById('player1Score').innerHTML = String(player1Point)
+        document.getElementById('player1Score').innerHTML = player1Point
 
         currentWords.splice(0, 1, getNextWord());
     }
@@ -145,51 +145,51 @@ function drawPlayer1Canvas() {
     }
 }
 
-// function drawPlayer2Canvas() {
-//     context2.clearRect(0, 0, canvas2.width, canvas2.height);
+function drawPlayer2Canvas() {
+    context2.clearRect(0, 0, canvas2.width, canvas2.height);
 
-//     context2.font = "30px Arial";
+    context2.font = "30px Arial";
 
-//     context2.fillStyle = wordColorPlayer2;
-//     context2.fillText(word1, padding + 5, word1Y, wordBoxWidth);
+    context2.fillStyle = wordColorPlayer2;
+    context2.fillText(word1, padding + 5, word1Y, wordBoxWidth);
 
-//     if (compareInput(word1, input)) {
-//         context2.fillStyle = highlightColor;
-//         context2.fillText(input, padding + 5, word1Y, wordBoxWidth);
-//     }
+    if (compareInput(word1, input)) {
+        context2.fillStyle = highlightColor;
+        context2.fillText(input, padding + 5, word1Y, wordBoxWidth);
+    }
 
-//     context2.fillStyle = wordColorPlayer2;
-//     context2.fillText(word2, wordBoxWidth + padding + 10, word2Y, wordBoxWidth);
+    context2.fillStyle = wordColorPlayer2;
+    context2.fillText(word2, wordBoxWidth + padding + 10, word2Y, wordBoxWidth);
 
-//     if (compareInput(word2, input)) {
-//         context2.fillStyle = highlightColor;
-//         context2.fillText(input, wordBoxWidth + padding + 10, word2Y, wordBoxWidth);
-//     }
+    if (compareInput(word2, input)) {
+        context2.fillStyle = highlightColor;
+        context2.fillText(input, wordBoxWidth + padding + 10, word2Y, wordBoxWidth);
+    }
 
-//     context2.fillStyle = wordColorPlayer2;
-//     context2.fillText(word3, (wordBoxWidth * 2) + padding + 15, word3Y, wordBoxWidth);
+    context2.fillStyle = wordColorPlayer2;
+    context2.fillText(word3, (wordBoxWidth * 2) + padding + 15, word3Y, wordBoxWidth);
 
-//     if (compareInput(word3, input)) {
-//         context2.fillStyle = highlightColor;
-//         context2.fillText(input, (wordBoxWidth * 2) + padding + 15, word3Y, wordBoxWidth);
-//     }
+    if (compareInput(word3, input)) {
+        context2.fillStyle = highlightColor;
+        context2.fillText(input, (wordBoxWidth * 2) + padding + 15, word3Y, wordBoxWidth);
+    }
 
-//     context2.fillStyle = wordColorPlayer2;
-//     context2.fillText(word4, (wordBoxWidth * 3) + padding + 20, word4Y, wordBoxWidth);
+    context2.fillStyle = wordColorPlayer2;
+    context2.fillText(word4, (wordBoxWidth * 3) + padding + 20, word4Y, wordBoxWidth);
 
-//     if (compareInput(word4, input)) {
-//         context2.fillStyle = highlightColor;
-//         context2.fillText(input, (wordBoxWidth * 3) + padding + 20, word4Y, wordBoxWidth);
-//     }
+    if (compareInput(word4, input)) {
+        context2.fillStyle = highlightColor;
+        context2.fillText(input, (wordBoxWidth * 3) + padding + 20, word4Y, wordBoxWidth);
+    }
 
-//     context2.fillStyle = wordColorPlayer2;
-//     context2.fillText(word5, (wordBoxWidth * 4) + padding + 25, word5Y, wordBoxWidth);
+    context2.fillStyle = wordColorPlayer2;
+    context2.fillText(word5, (wordBoxWidth * 4) + padding + 25, word5Y, wordBoxWidth);
 
-//     if (compareInput(word5, input)) {
-//         context2.fillStyle = highlightColor;
-//         context2.fillText(input, (wordBoxWidth * 4) + padding + 25, word5Y, wordBoxWidth);
-//     }
-// }
+    if (compareInput(word5, input)) {
+        context2.fillStyle = highlightColor;
+        context2.fillText(input, (wordBoxWidth * 4) + padding + 25, word5Y, wordBoxWidth);
+    }
+}
 
 function gameLoop(timeStamp) {
     // Update game objects in the loop
@@ -236,43 +236,17 @@ function getNextWord() {
     return nextword
 }
 
-var updateCanvas = function(obj) {
+var updatePlayer2Canvas = function(obj) {
     var str = JSON.stringify(obj, null, 2);
+
+    // var player2Input = document.getElementById("player2Input");
+    // player2Input.value = obj.currentInput;
+
+    document.getElementById("player2Score").innerHTML = obj.score;
+    document.getElementById("player2Input").value = obj.currentInput;
+
     console.log(str);
+    console.log("TACO");
 }
-
-// function syntaxHighlight(json) {
-//     if (typeof json != 'string') {
-//         json = JSON.stringify(json, undefined, 2);
-//     }
-//     json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-//     return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function(match) {
-//         var cls = 'number';
-//         if (/^"/.test(match)) {
-//             if (/:$/.test(match)) {
-//                 cls = 'key';
-//             } else {
-//                 cls = 'string';
-//             }
-//         } else if (/true|false/.test(match)) {
-//             cls = 'boolean';
-//         } else if (/null/.test(match)) {
-//             cls = 'null';
-//         }
-//         return '<span class="' + cls + '">' + match + '</span>';
-//     });
-// }
-
-var player1input = document.getElementById('player1Input')
-
-player1input.addEventListener('keypress', function(e) {
-    input = document.getElementById('player1Input').value
-    if (e.key === 'Enter') {
-        if (input == word1) {
-            word1 = getNextWord()
-            word1Y = 0
-        }
-    }
-})
 
 init();
