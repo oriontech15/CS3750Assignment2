@@ -28,7 +28,27 @@ connection.on("ReceiveGameState", function(user, gameState) {
 connection.start().then(function() {
     //enabling the "send button"
     document.getElementById("player1Input").disabled = false;
-    document.getElementById("player2Input").disabled = false;
+    document.getElementById("player2Input").disabled = true;
+
+    var user = document.getElementById("playerName").value;
+
+    //New object holding key value pairs
+    var obj = new Object();
+    obj["name"] = user;
+    obj["currentInput"] = document.getElementById("player1Input").value;
+    obj["currentWordList"] = currentWords;
+    obj["score"] = parseInt(document.getElementById("player1Score").innerHTML);
+    obj["positions"] = { word1Y: word1Y, word2Y: word2Y, word3Y: word3Y, word4Y: word4Y, word5Y: word5Y };
+    obj["wordSpeeds"] = { word1Speed: word1Speed, word2Speed: word2Speed, word3Speed: word3Speed, word4Speed: word4Speed, word5Speed: word5Speed };
+
+    //Encoding all the data into a JSON object
+    var json = JSON.stringify(obj);
+
+    //Client side sending the message/object to the server side
+    //SendGameState is the name of the function on the server side / in the c# file
+    connection.invoke("SendGameState", user, json).catch(function(err) {
+        return console.error(err.toString());
+    });
 }).catch(function(err) {
     return console.error(err.toString());
 });
@@ -51,6 +71,8 @@ player1Input.addEventListener("keyup", (event) => {
     obj["currentInput"] = document.getElementById("player1Input").value;
     obj["currentWordList"] = currentWords;
     obj["score"] = parseInt(document.getElementById("player1Score").innerHTML);
+    obj["positions"] = { word1Y: word1Y, word2Y: word2Y, word3Y: word3Y, word4Y: word4Y, word5Y: word5Y };
+    obj["wordSpeeds"] = { word1Speed: word1Speed, word2Speed: word2Speed, word3Speed: word3Speed, word4Speed: word4Speed, word5Speed: word5Speed };
 
     //Encoding all the data into a JSON object
     var json = JSON.stringify(obj);
@@ -64,5 +86,4 @@ player1Input.addEventListener("keyup", (event) => {
     //player1Input.value = "";
 
     event.preventDefault();
-
 });

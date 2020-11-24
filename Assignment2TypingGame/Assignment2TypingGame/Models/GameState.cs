@@ -9,6 +9,7 @@ namespace Assignment2TypingGame.Models.GameState
         public string currentInput {get; set;}
         public int score {get; set;}
         public List<string> currentWordList {get; set;}
-        public List<Dictionary<string, int>> positions {get; set;}
+        public Dictionary<string, double> positions {get; set;}
+        public Dictionary<string, double> wordSpeeds {get; set;}
     }
 }

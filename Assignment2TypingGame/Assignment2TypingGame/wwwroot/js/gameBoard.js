@@ -46,10 +46,10 @@ function stopClock() {
     clearInterval(clockId)
 }
 
-//function loadStartingScore() {
-//    document.getElementById("player1Score").innerHTML = "000";
-//    document.getElementById("player2Score").innerHTML = "000";
-//}
+function loadStartingScore() {
+    document.getElementById("player1Score").innerHTML = "000";
+    document.getElementById("player2Score").innerHTML = "000";
+}
 
 function init() {
     loadStartingScore();
