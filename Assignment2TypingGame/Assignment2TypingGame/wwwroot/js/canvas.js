@@ -200,6 +200,10 @@ function gameLoop(timeStamp) {
     if ((word1Y <= canvas1.width) && (word2Y <= canvas1.width) && (word3Y <= canvas1.width) && (word4Y <= canvas1.width) && (word5Y <= canvas1.width)) {
         window.requestAnimationFrame(gameLoop);
     }
+    else {
+        stopClock();
+        //document.getElementById('player1input').dissabled;
+    }
 }
 
 function update() {
