@@ -14,26 +14,14 @@ connection.on("ReceiveGameState", function(user, gameState) {
 
     var currentUser = document.getElementById("playerName").value;
 
-    if (user == currentUser) {
-        //Checking to see if this message came from a different player
-        //if (user != currentUser) {
-
-        //changing from a JSON to a javascript object
-        const obj = JSON.parse(gameState);
-        updateCanvas(obj);
-
-        //document.getElementById("otherPlayerName").value = obj.name;
-        document.getElementById("player1Score").innerHTML = obj.score;
-        document.getElementById("player1Input").value = obj.currentInput;
-    }
+    if (user != currentUser) {
 
         const obj = JSON.parse(gameState);
-        updateCanvas(obj);
+        updatePlayer2Canvas(obj);
 
-        //document.getElementById("otherPlayerName").value = obj.name;
-        document.getElementById("player2Score").value = obj.score;
-        document.getElementById("player2Input").value = obj.currentInput;
-
+        // //document.getElementById("otherPlayerName").value = obj.name;
+        // document.getElementById("player2Score").value = obj.score;
+        // document.getElementById("player2Input").value = obj.currentInput;
     }
 });
 
@@ -55,15 +43,14 @@ player1Input.addEventListener("keyup", (event) => {
     console.log(event.key);
     console.log(event.code);
 
-    //var user = document.getElementById("playerName").value;
-    var user = "Player 1";
+    var user = document.getElementById("playerName").value;
 
     //New object holding key value pairs
     var obj = new Object();
     obj["name"] = user;
     obj["currentInput"] = document.getElementById("player1Input").value;
     obj["currentWordList"] = currentWords;
-    obj["score"] = document.getElementById("player1Score").value;
+    obj["score"] = parseInt(document.getElementById("player1Score").innerHTML);
 
     //Encoding all the data into a JSON object
     var json = JSON.stringify(obj);
@@ -105,5 +92,5 @@ player2Input.addEventListener("keyup", (event) => {
 
     // player2Input.value = "";
     event.preventDefault();
-   
+
 });
