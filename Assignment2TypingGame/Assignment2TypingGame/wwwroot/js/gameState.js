@@ -64,33 +64,5 @@ player1Input.addEventListener("keyup", (event) => {
     //player1Input.value = "";
 
     event.preventDefault();
-});
-
-// Execute a function when the user releases a key on the keyboard -- and send the message
-player2Input.addEventListener("keyup", (event) => {
-
-    // Number 13 is the "Enter" key on the keyboard
-
-    console.log(event.key);
-    console.log(event.code);
-
-    //Gathering the information to be sent
-    // var user = document.getElementById("playerName").value;
-    var user = "Player 2";
-    var obj = new Object();
-    obj["name"] = user;
-    obj["currentInput"] = document.getElementById("player2Input").value;
-    obj["currentWordList"] = words;
-    obj["score"] = document.getElementById("player2Score").value;
-    var json = JSON.stringify(obj);
-
-    //Client side sending the message/object to the server side
-    //SendGameState is the name of the function on the server side / in the c# file
-    connection.invoke("SendGameState", user, json).catch(function(err) {
-        return console.error(err.toString());
-    });
-
-    // player2Input.value = "";
-    event.preventDefault();
 
 });
