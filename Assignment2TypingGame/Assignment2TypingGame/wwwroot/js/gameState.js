@@ -22,6 +22,7 @@ connection.on("ReceiveGameState", function(user, gameState) {
         // //document.getElementById("otherPlayerName").value = obj.name;
         // document.getElementById("player2Score").value = obj.score;
         // document.getElementById("player2Input").value = obj.currentInput;
+        
     }
 });
 
