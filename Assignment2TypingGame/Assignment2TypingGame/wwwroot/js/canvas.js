@@ -296,6 +296,7 @@ var updatePlayer2Canvas = function(obj) {
 
     document.getElementById("player2Score").innerHTML = obj.score;
     document.getElementById("player2Input").value = obj.currentInput;
+    document.getElementById("otherPlayerName").innerHTML = obj.name;
 
     player2CurrentInput = obj.currentInput;
 
