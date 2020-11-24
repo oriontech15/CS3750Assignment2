@@ -10,11 +10,11 @@ document.getElementById("player1Input").disabled = true;
 document.getElementById("player2Input").disabled = true;
 
 //This function will execute when a message sent from the server is titled "ReceiveGameState"
-connection.on("ReceiveGameState", function (user, gameState) {
+connection.on("ReceiveGameState", function(user, gameState) {
 
-    //var currentUser = document.GetElementByID("playerName").value;
+    var currentUser = document.getElementById("playerName").value;
 
-    if (user == "Player 1") {
+    if (user == currentUser) {
         //Checking to see if this message came from a different player
         //if (user != currentUser) {
 
@@ -27,8 +27,6 @@ connection.on("ReceiveGameState", function (user, gameState) {
         document.getElementById("player1Input").value = obj.currentInput;
     }
 
-    else {
-
         const obj = JSON.parse(gameState);
         updateCanvas(obj);
 
@@ -39,11 +37,11 @@ connection.on("ReceiveGameState", function (user, gameState) {
     }
 });
 
-connection.start().then(function () {
+connection.start().then(function() {
     //enabling the "send button"
     document.getElementById("player1Input").disabled = false;
     document.getElementById("player2Input").disabled = false;
-}).catch(function (err) {
+}).catch(function(err) {
     return console.error(err.toString());
 });
 
@@ -64,7 +62,7 @@ player1Input.addEventListener("keyup", (event) => {
     var obj = new Object();
     obj["name"] = user;
     obj["currentInput"] = document.getElementById("player1Input").value;
-    obj["currentWordList"] = words;
+    obj["currentWordList"] = currentWords;
     obj["score"] = document.getElementById("player1Score").value;
 
     //Encoding all the data into a JSON object
@@ -72,7 +70,7 @@ player1Input.addEventListener("keyup", (event) => {
 
     //Client side sending the message/object to the server side
     //SendGameState is the name of the function on the server side / in the c# file
-    connection.invoke("SendGameState", user, json).catch(function (err) {
+    connection.invoke("SendGameState", user, json).catch(function(err) {
         return console.error(err.toString());
     });
 
@@ -101,7 +99,7 @@ player2Input.addEventListener("keyup", (event) => {
 
     //Client side sending the message/object to the server side
     //SendGameState is the name of the function on the server side / in the c# file
-    connection.invoke("SendGameState", user, json).catch(function (err) {
+    connection.invoke("SendGameState", user, json).catch(function(err) {
         return console.error(err.toString());
     });
 
