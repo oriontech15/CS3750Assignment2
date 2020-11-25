@@ -44,6 +44,15 @@ function runClock() {
 
 function stopClock() {
     clearInterval(clockId)
+    var score1 = document.getElementById("player1Score").innerHTML;
+    var score2 = document.getElementById("player2Score").innerHTML;
+    if (score1 < score2) {
+        window.alert("You loose");
+    } else {
+        window.alert("You win");
+    }
+
+    document.getElementById("player1Input").disabled = true;
 }
 
 function loadStartingScore() {
