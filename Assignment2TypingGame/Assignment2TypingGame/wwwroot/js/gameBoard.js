@@ -47,7 +47,7 @@ function stopClock() {
     var score1 = document.getElementById("player1Score").innerHTML;
     var score2 = document.getElementById("player2Score").innerHTML;
     if (score1 < score2) {
-        window.alert("You loose");
+        window.alert("You lose");
     } else {
         window.alert("You win");
     }
